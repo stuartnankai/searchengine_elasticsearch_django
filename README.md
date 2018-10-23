@@ -1,13 +1,7 @@
-基于Django实现的搜索界面。
+Using Elastic search 6.4.2 and Django 2.1.2
 
+Run web server：
 ```
-pip install Django --user
-django-admin startproject search_ui
+python3 manage.py runserver
 ```
-
-运行 web 服务：
-```
-python manage.py runserver
-```
-
-访问 `http://127.0.0.1:8000/`。
+Visit `http://127.0.0.1:8000/`

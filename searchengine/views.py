@@ -77,13 +77,15 @@ def get_elastic_search_result(keywords):
     # print("This is hits hits")
     # print(result['hits']['hits'])
     #
-    # print("This is item")
-    # for item in result['hits']['hits']:
-    #     print(item)
+    print("This is item")
+    for item in result['hits']['hits']:
+        print(item)
 
     return [{
         'url': item['_source']['doc']['link'],
         'title': item['_source']['doc']['title'],
+        'description': item['_source']['doc']['description'],
+        'section': item['_source']['doc']['section'],
         'content': item['_source']['doc']['content']
     } for item in result['hits']['hits']]
 

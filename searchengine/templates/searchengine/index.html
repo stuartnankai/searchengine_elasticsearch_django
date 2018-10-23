@@ -21,7 +21,12 @@
                     <div>
                         <a href="{{ item.url }}" target="_blank">{{ item.title }}</a>
                     </div>
-
+                    <h2>Description: </h2>
+                    <div>
+                        {{item.description}}
+                    </div>
+                    <h3>Section: </h3><div>{{item.section}}</div>
+                    <h4>Content: </h4>
                     <div>{{ item.content }}</div>
                 </div>
             {% endfor %}
