@@ -1,8 +1,5 @@
 from elasticsearch import Elasticsearch, helpers
 
-
-#
-
 es = Elasticsearch([{'host': '127.0.0.1', 'port': 9200}])
 
 body = {

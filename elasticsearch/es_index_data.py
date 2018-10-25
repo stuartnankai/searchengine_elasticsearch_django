@@ -5,11 +5,9 @@ from elasticsearch import Elasticsearch, helpers
 from bs4 import BeautifulSoup
 import pandas as pd
 import json
-from elasticsearch.helpers import bulk
 
 
 def process_text(text):
-    ''' 将换行、多个空格替换成一个空格 '''
     text = text.strip().replace('\n', ' ')
     return ' '.join(text.split())
 
@@ -34,27 +32,6 @@ es = Elasticsearch([{'host': '127.0.0.1', 'port': 9200}])
 #             'url': url,
 #             'title': process_text(title),
 #             'content': process_text(content)
-#         })
-
-#
-# with open('/Users/jiansun/Documents/PyCharm/elasticsearch/elasticsearch/dataset/bbc/2018/10/1/articles', 'r') as fobj:
-#     data = json.load(fobj)
-#     # print(data['articles'])
-#     for item in data['articles']:
-#         # print(item['section'])
-#         print(item['title'])
-#         title = item['title']
-#         des = item['description']
-#         section = item['section']
-#         content = item['content']
-#         link = item['link']
-#         print(process_text(link))
-#         es.index(index='bbcnews', doc_type='article', body={
-#             'title': process_text(title),
-#             'description': process_text(des),
-#             'section': process_text(section),
-#             'content': process_text(content),
-#             'link': process_text(link)
 #         })
 
 def docs_for_load():

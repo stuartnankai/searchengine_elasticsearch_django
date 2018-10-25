@@ -49,8 +49,8 @@ def get_elastic_search_result(keywords):
         },
         "highlight": {
             "fields": {
-                "title": {},
-                "content": {}
+                "doc.title": {},
+                "doc.content": {}
             }
         },
         "from": 0,
